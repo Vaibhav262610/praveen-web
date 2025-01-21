@@ -8,14 +8,15 @@ const CustomCursor = () => {
   const [isHoveringText, setIsHoveringText] = useState(false);
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       setCursorPosition({ x: e.clientX, y: e.clientY });
     };
 
-    const handleMouseOver = (e) => {
-      // Check if hovering over text-based elements
+    const handleMouseOver = (e: MouseEvent) => {
+      // Type casting e.target to HTMLElement to access tagName
+      const target = e.target as HTMLElement;
       const textTags = ['A', 'P', 'SPAN', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6'];
-      if (textTags.includes(e.target.tagName)) {
+      if (target && textTags.includes(target.tagName)) {
         setIsHoveringText(true);
       }
     };
