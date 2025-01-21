@@ -53,7 +53,7 @@ export default function AboutMe() {
             </h1>
           </div>
           <div>
-            <button className='text-green-400 hover:text-white text-xl rounded border-2 hover:bg-green-400 duration-200 border-green-400 py-2 px-8 mt-12'>
+            <button className='text-red-500 hover:text-white text-xl rounded border-2 hover:bg-red-500 duration-200 border-red-500 py-2 px-8 mt-12'>
               MORE 👉
             </button>
           </div>
@@ -61,7 +61,7 @@ export default function AboutMe() {
         <div>
           <Image
             src='/aboutMe-img.png'
-            className='border-2 admin border-black rounded'
+            className='border-2 admin border-white rounded'
             width={500}
             height={500}
             alt='image'
