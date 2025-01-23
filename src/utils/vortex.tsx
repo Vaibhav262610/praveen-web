@@ -147,8 +147,7 @@ export const Vortex: React.FC<VortexProps> = ({
     setup();
     const handleResize = () => {
       const canvas = canvasRef.current;
-      const ctx = canvas?.getContext('2d');
-      if (canvas && ctx) resizeCanvas(canvas, ctx);
+      if (canvas) resizeCanvas(canvas);
     };
 
     window.addEventListener('resize', handleResize);
