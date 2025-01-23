@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 // import { Geist, Geist_Mono } from "next/font/google";
 import './globals.css';
 import Navbar from '@/components/Navbar';
-import CustomCursor from './CustomCursor';
 
 export const metadata: Metadata = {
   title: 'Praveen Pasupuleti',
@@ -20,6 +19,12 @@ export default function RootLayout({
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link rel='preconnect' href='https://fonts.gstatic.com' />
         <link
+          href='https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap'
+          rel='stylesheet'
+        ></link>
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link rel='preconnect' href='https://fonts.gstatic.com' />
+        <link
           href='https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap'
           rel='stylesheet'
         />
@@ -27,7 +32,6 @@ export default function RootLayout({
       <body>
         <div>
           <Navbar />
-          <CustomCursor />
           {children}
         </div>
       </body>

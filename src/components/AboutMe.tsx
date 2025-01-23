@@ -1,24 +1,93 @@
 'use client';
 
 import Image from 'next/image';
+import { useRef } from 'react';
+import VariableProximity from '@/utils/VariableProximity ';
+import Squares from '@/utils/Squares';
+import Stack from '@/utils/Stack';
 
-export default function AboutMe() {
+const AboutMe: React.FC = () => {
+  const images = [
+    {
+      id: 1,
+      img: 'https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=500&auto=format',
+    },
+    {
+      id: 2,
+      img: 'https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=500&auto=format',
+    },
+    {
+      id: 3,
+      img: 'https://images.unsplash.com/photo-1452626212852-811d58933cae?q=80&w=500&auto=format',
+    },
+    {
+      id: 4,
+      img: 'https://images.unsplash.com/photo-1572120360610-d971b9d7767c?q=80&w=500&auto=format',
+    },
+  ];
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
   return (
     <>
+      <div className='absolute z-10 border-b-2 border-white opacity-10'>
+        <Squares
+          speed={0.5}
+          squareSize={40}
+          direction='diagonal' // up, down, left, right, diagonal
+          borderColor='#fff'
+          hoverFillColor='#222'
+        />
+      </div>
       <div className='flex justify-end overflow-hidden'>
-        <div className='text absolute gap-20 flex animate-aboutMeScroll overflow-hidden text-[10vw] font-bold uppercase text-transparent whitespace-nowrap'>
-          <span>
-            ABOUT <span>ME</span>
-          </span>
-          <span>
-            ABOUT <span>ME</span>
-          </span>
-          <span>
-            ABOUT <span>ME</span>
-          </span>
-          <span>
-            ABOUT <span>ME</span>
-          </span>
+        <div className='text z-50 absolute gap-20 flex animate-aboutMeScroll overflow-hidden text-[10vw] font-bold uppercase text-transparent whitespace-nowrap'>
+          <h1>ABOUT ME</h1>
+          <h1>ABOUT ME</h1>
+          <h1>ABOUT ME</h1>
+          {/* <div
+            className='text'
+            ref={containerRef}
+            style={{ position: 'relative' }}
+          >
+            <VariableProximity
+              label={'ABOUT ME'}
+              className={'variable-proximity-demo'}
+              fromFontVariationSettings="'wght' 400, 'opsz' 9"
+              toFontVariationSettings="'wght' 1000, 'opsz' 40"
+              containerRef={containerRef}
+              radius={100}
+              falloff='linear'
+            />
+          </div>
+          <div
+            className='text'
+            ref={containerRef}
+            style={{ position: 'relative' }}
+          >
+            <VariableProximity
+              label={'ABOUT ME'}
+              className={'variable-proximity-demo'}
+              fromFontVariationSettings="'wght' 400, 'opsz' 9"
+              toFontVariationSettings="'wght' 1000, 'opsz' 40"
+              containerRef={containerRef}
+              radius={100}
+              falloff='linear'
+            />
+          </div>
+          <div
+            className='text'
+            ref={containerRef}
+            style={{ position: 'relative' }}
+          >
+            <VariableProximity
+              label={'ABOUT ME'}
+              className={'variable-proximity-demo'}
+              fromFontVariationSettings="'wght' 400, 'opsz' 9"
+              toFontVariationSettings="'wght' 1000, 'opsz' 40"
+              containerRef={containerRef}
+              radius={100}
+              falloff='linear'
+            />
+          </div> */}
         </div>
         <style jsx>{`
           @keyframes aboutMeScroll {
@@ -35,10 +104,10 @@ export default function AboutMe() {
           }
         `}</style>
       </div>
-      <div className='flex w-full justify-evenly h-[150vh] items-center '>
-        <div className='w-[35%] flex-col flex-wrap flex'>
-          <div className=' flex-wrap flex'>
-            <h1 className='text-gray-300 leading-normal text-3xl'>
+      <div className='flex w-full justify-evenly h-[100vh] mt-40 items-center'>
+        <div className='w-[35%] z-50 flex-col flex-wrap flex'>
+          <div className='flex-wrap flex'>
+            <h1 className='text-gray-300 leading-normal text-2xl'>
               Hi! I am
               <span className='bg-white mx-2 rounded font-bold uppercase p-1 text-black'>
                 Praveen Pasupuleti
@@ -53,21 +122,29 @@ export default function AboutMe() {
             </h1>
           </div>
           <div>
-            <button className='text-red-500 hover:text-white text-xl rounded border-2 hover:bg-red-500 duration-200 border-red-500 py-2 px-8 mt-12'>
+            <button className='text-green-400 hover:text-white text-xl rounded border-2 hover:bg-green-400 duration-200 border-green-400 py-2 px-8 mt-12'>
               MORE 👉
             </button>
           </div>
         </div>
-        <div>
+        <div className='z-50'>
           <Image
             src='/aboutMe-img.png'
             className='border-2 admin border-white rounded'
-            width={500}
-            height={500}
+            width={450}
+            height={450}
             alt='image'
           />
+          {/* <Stack
+            randomRotation={true}
+            sensitivity={180}
+            cardDimensions={{ width: 200, height: 200 }}
+            cardsData={images}
+          /> */}
         </div>
       </div>
     </>
   );
-}
+};
+
+export default AboutMe;

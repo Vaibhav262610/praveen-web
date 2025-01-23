@@ -4,9 +4,9 @@
 
 body {
   font-family: "Geologica", serif;
-  background-color: rgb(19, 19, 19);
+  background-color: rgb(17, 17, 24);
   overflow-x: hidden;
-  cursor: none;
+  /* cursor: none; */
 }
 
 .name {
@@ -67,15 +67,57 @@ body {
 }
 
 .text {
-  background: -webkit-linear-gradient(-86deg, red 100%, #7AEC8D 55%, #09E5C3 80%);
+  background: -webkit-linear-gradient(-86deg, #ffa4ff 5%, #cdec7a 53%, #c8ff00 91%);
   background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-stroke: 4px transparent;
-  color: rgb(19, 19, 19);
+  -webkit-text-stroke: 6px transparent;
+  color: rgb(17, 17, 24);
   user-select: none;
 
 }
 
+.text2 {
+  background: -webkit-linear-gradient(-86deg, #ffa4ff 5%, #cdec7a 53%, #c8ff00 91%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 6px transparent;
+  color: rgb(17, 17, 24);
+  user-select: none;
+
+}
+
+.vortex {
+  /* background-color: rgb(17, 17, 24); */
+}
+
+/*
 .admin {
   box-shadow: 10px 10px red;
+} */
+
+.words {
+  font-family: "Cedarville Cursive", serif;
+  /* color: color-mix(in srgb, red 50, color percentage) */
+  /* background: linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44); */
+  /* -webkit-text-fill-color: transparent; */
+  /* -webkit-background-clip: text; */
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #383838;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
