@@ -6,7 +6,7 @@ const Services = () => {
   return (
     <BackgroundLines
       svgOptions={{ duration: 2 }}
-      className='flex bg-red-500 items-center justify-center w-full flex-col px-4'
+      className='flex  items-center justify-center w-full flex-col px-4'
     >
       <div className='h-screen w-full flex justify-center  items-center'>
         <div className='flex flex-col gap-24 items-center w-[80%]'>
