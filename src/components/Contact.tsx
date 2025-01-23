@@ -14,7 +14,7 @@ export default function Contact() {
         // backgroundColor='#111118'
         className='flex items-center flex-col justify-center px-2 md:px-10  w-full h-full'
       > */}
-      <div className='flex justify-end overflow-hidden'>
+      <div className='flex mt-20 justify-end overflow-hidden'>
         <div className='text2 absolute gap-20 flex animate-aboutMeScroll overflow-hidden text-[12vw] font-bold uppercase text-transparent whitespace-nowrap'>
           {/* <div
             className='text tracking-widest'

@@ -1,9 +1,6 @@
 'use client';
 
 import { Carousel } from '@/components/ui/carousel';
-// import { Vortex } from '@/utils/vortex';
-// import { BsTwitterX } from 'react-icons/bs';
-// import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 
 export default function Work() {
   const slideData = [
@@ -30,9 +27,9 @@ export default function Work() {
   ];
 
   return (
-    <div className='h-screen w-full mt-52 flex flex-col'>
+    <div className='h-[120vh] w-full mt-[2.3rem] flex flex-col'>
       {/* Animated "WORKS" Heading */}
-      <div className='relative flex  justify-center items-center h-52 overflow-hidden'>
+      <div className='relative flex justify-center items-center h-96 overflow-hidden'>
         <div className='absolute text flex gap-20 animate-aboutMeScroll text-[12vw] font-bold uppercase text-transparent whitespace-nowrap'>
           <h1 className='tracking-widest'>WORKS</h1>
           <h1 className='tracking-widest'>WORKS</h1>
@@ -56,6 +53,11 @@ export default function Work() {
       {/* Carousel Section */}
       <div className='h-screen flex items-center justify-center'>
         <Carousel slides={slideData} />
+      </div>
+      <div className='w-full py-12 flex items-center justify-center'>
+        <button className='text-yellow-400 hover:text-white text-xl rounded border-2 hover:bg-yellow-400 duration-200 border-yellow-400 py-2 px-8 mt-12'>
+          MORE 👉
+        </button>
       </div>
     </div>
   );

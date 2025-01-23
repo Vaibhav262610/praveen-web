@@ -88,7 +88,7 @@ const Slide: React.FC<SlideProps> = ({
         }}
       >
         <div
-          className='absolute top-0 left-0 w-full h-full rounded-[1%] overflow-hidden transition-all duration-150 ease-out'
+          className='absolute shadow-lg shadow-white/70 top-0 left-0 w-full h-full rounded-[1%] overflow-hidden transition-all duration-150 ease-out'
           style={{
             transform:
               current === index
@@ -144,7 +144,7 @@ const CarouselControl: React.FC<CarouselControlProps> = ({
 }) => {
   return (
     <button
-      className={`w-10 h-10 flex items-center mx-2 justify-center bg-neutral-200 dark:bg-neutral-800 border-3 border-transparent rounded-full focus:border-[#6D64F7] focus:outline-none hover:-translate-y-0.5 active:translate-y-0.5 transition duration-200 ${
+      className={`w-12 h-12 mt-4  flex items-center mx-2 justify-center bg-neutral-200 dark:bg-neutral-800 border-3 border-transparent rounded-full focus:border-[#6D64F7] focus:outline-none hover:-translate-y-0.5 active:translate-y-0.5 transition duration-200 ${
         type === 'previous' ? 'rotate-180' : ''
       }`}
       title={title}
@@ -160,7 +160,7 @@ interface CarouselProps {
 }
 
 export const Carousel: React.FC<CarouselProps> = ({ slides }) => {
-  const [current, setCurrent] = useState(0);
+  const [current, setCurrent] = useState(1); // Set default to 2 (third box)
 
   const handlePreviousClick = () => {
     const previous = current - 1;
