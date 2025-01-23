@@ -14,7 +14,10 @@ function CardRotate({ children, onSendToBack, sensitivity }: CardRotateProps) {
   const rotateX = useTransform(y, [-100, 100], [60, -60]);
   const rotateY = useTransform(x, [-100, 100], [-60, 60]);
 
-  function handleDragEnd(_, info) {
+  function handleDragEnd(
+    _: unknown, // Explicitly mark it as `unknown` since it's unused
+    info: { offset: { x: number; y: number } } // Type the `info` parameter
+  ) {
     console.log('Drag ended:', info.offset); // Log the drag info
     if (
       Math.abs(info.offset.x) > sensitivity ||

@@ -1,6 +1,6 @@
 'use client';
 
-import { Vortex } from '@/utils/vortex';
+// import { Vortex } from '@/utils/vortex';
 // import VariableProximity from '@/utils/VariableProximity ';
 // import { useRef } from 'react';
 import { BsTwitterX } from 'react-icons/bs';
