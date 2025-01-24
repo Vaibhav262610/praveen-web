@@ -1,21 +1,16 @@
 'use client';
 
 import Image from 'next/image';
-// import { useRef } from 'react';
-// import VariableProximity from '@/utils/VariableProximity ';
 import Squares from '@/utils/Squares';
-// import Stack from '@/utils/Stack';
 
 const AboutMe: React.FC = () => {
-  // const containerRef = useRef<HTMLDivElement | null>(null);
-
   return (
     <>
       <div className='absolute z-10 border-b-2 border-white opacity-10'>
         <Squares
           speed={0.5}
           squareSize={40}
-          direction='diagonal' // up, down, left, right, diagonal
+          direction='diagonal'
           borderColor='#fff'
           hoverFillColor='#222'
         />
@@ -25,51 +20,6 @@ const AboutMe: React.FC = () => {
           <h1>ABOUT ME</h1>
           <h1>ABOUT ME</h1>
           <h1>ABOUT ME</h1>
-          {/* <div
-            className='text'
-            ref={containerRef}
-            style={{ position: 'relative' }}
-          >
-            <VariableProximity
-              label={'ABOUT ME'}
-              className={'variable-proximity-demo'}
-              fromFontVariationSettings="'wght' 400, 'opsz' 9"
-              toFontVariationSettings="'wght' 1000, 'opsz' 40"
-              containerRef={containerRef}
-              radius={100}
-              falloff='linear'
-            />
-          </div>
-          <div
-            className='text'
-            ref={containerRef}
-            style={{ position: 'relative' }}
-          >
-            <VariableProximity
-              label={'ABOUT ME'}
-              className={'variable-proximity-demo'}
-              fromFontVariationSettings="'wght' 400, 'opsz' 9"
-              toFontVariationSettings="'wght' 1000, 'opsz' 40"
-              containerRef={containerRef}
-              radius={100}
-              falloff='linear'
-            />
-          </div>
-          <div
-            className='text'
-            ref={containerRef}
-            style={{ position: 'relative' }}
-          >
-            <VariableProximity
-              label={'ABOUT ME'}
-              className={'variable-proximity-demo'}
-              fromFontVariationSettings="'wght' 400, 'opsz' 9"
-              toFontVariationSettings="'wght' 1000, 'opsz' 40"
-              containerRef={containerRef}
-              radius={100}
-              falloff='linear'
-            />
-          </div> */}
         </div>
         <style jsx>{`
           @keyframes aboutMeScroll {
@@ -86,12 +36,12 @@ const AboutMe: React.FC = () => {
           }
         `}</style>
       </div>
-      <div className='flex w-full justify-evenly h-[100vh] mt-40 items-center'>
-        <div className='w-[35%] z-50 flex-col flex-wrap flex'>
-          <div className='flex-wrap flex'>
-            <h1 className='text-gray-300 leading-normal text-2xl'>
+      <div className='flex flex-col lg:flex-row w-full justify-evenly items-center h-auto lg:h-[100vh] mt-16 lg:mt-40 px-6 lg:px-16'>
+        <div className='lg:w-[40%] flex flex-col text-center lg:text-left'>
+          <div>
+            <h1 className='text-gray-300 leading-relaxed text-lg sm:text-xl lg:text-2xl'>
               Hi! I am
-              <span className='bg-white mx-2 rounded font-bold uppercase p-1 text-black'>
+              <span className='bg-white mx-2 rounded font-bold uppercase px-2 py-1 text-black'>
                 Praveen Pasupuleti
               </span>
               , Originated from Pulivendula, YSR Kadapa, Andhra Pradesh, India.
@@ -104,25 +54,19 @@ const AboutMe: React.FC = () => {
             </h1>
           </div>
           <div>
-            <button className='text-green-400 hover:text-white text-xl rounded border-2 hover:bg-green-400 duration-200 border-green-400 py-2 px-8 mt-12'>
+            <button className='text-green-400 hover:text-white text-lg lg:text-xl rounded border-2 hover:bg-green-400 duration-200 border-green-400 py-2 px-6 sm:px-8 mt-8'>
               MORE 👉
             </button>
           </div>
         </div>
-        <div className='z-50'>
+        <div className='mt-12 lg:mt-0'>
           <Image
             src='/aboutMe-img.png'
-            className='border-2 admin border-white rounded'
-            width={450}
-            height={450}
+            className='border-2 admin border-white rounded mx-auto lg:mx-0'
+            width={350}
+            height={350}
             alt='image'
           />
-          {/* <Stack
-            randomRotation={true}
-            sensitivity={180}
-            cardDimensions={{ width: 200, height: 200 }}
-            cardsData={images}
-          /> */}
         </div>
       </div>
     </>
