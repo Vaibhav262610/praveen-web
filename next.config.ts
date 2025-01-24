@@ -9,6 +9,7 @@ module.exports = {
       'scontent.fluh1-3.fna.fbcdn.net',
       'scontent.fluh1-2.fna.fbcdn.net',
       'scontent.fluh1-1.fna.fbcdn.net',
+      'via.placeholder.com',
     ],
   },
 };

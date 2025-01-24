@@ -1,5 +1,6 @@
 'use client';
 
+import Squares from '@/utils/Squares';
 // import { Vortex } from '@/utils/vortex';
 // import VariableProximity from '@/utils/VariableProximity ';
 // import { useRef } from 'react';
@@ -10,30 +11,19 @@ export default function Contact() {
   //   const containerRef = useRef<HTMLDivElement | null>(null);
   return (
     <>
-      {/* <Vortex
-        // backgroundColor='#111118'
-        className='flex items-center flex-col justify-center px-2 md:px-10  w-full h-full'
-      > */}
+      <div className='absolute z-10 border-t-2 border-white opacity-10'>
+        <Squares
+          speed={0.5}
+          squareSize={40}
+          direction='diagonal' // up, down, left, right, diagonal
+          borderColor='#fff'
+          hoverFillColor='#222'
+        />
+      </div>
       <div className='flex mt-20 justify-end overflow-hidden'>
         <div className='text2 absolute gap-20 flex animate-aboutMeScroll overflow-hidden text-[12vw] font-bold uppercase text-transparent whitespace-nowrap'>
-          {/* <div
-            className='text tracking-widest'
-            ref={containerRef}
-            style={{ position: 'relative' }}
-            >
-            <VariableProximity
-            label='CONTACT'
-            className='variable-proximity-demo'
-            fromFontVariationSettings="'wght' 400, 'opsz' 9"
-              toFontVariationSettings="'wght' 1000, 'opsz' 40"
-              containerRef={containerRef}
-              radius={100}
-              falloff='linear'
-              />
-              </div> */}
           <h1 className='tracking-widest'>CONTACT</h1>
           <h1 className='tracking-widest'>CONTACT</h1>
-          {/* <h1 className='tracking-widest'>CONTACT</h1> */}
         </div>
         <style jsx>{`
           @keyframes aboutMeScroll {
@@ -50,8 +40,14 @@ export default function Contact() {
           }
         `}</style>
       </div>
-      <div className='h-screen text-white flex flex-col justify-center w-full items-center'>
-        <div className='flex flex-col mt-24 items-center text-xl font-bold'>
+      <div className='h-screen text-white flex gap-10 flex-col justify-center w-full items-center'>
+        <div className='text-white mt-28 text-6xl font-semibold'>
+          <h1>
+            Is it <span className='text-yellow-300'>ME</span> you are looking
+            for?
+          </h1>
+        </div>
+        <div className='flex flex-col  items-center text-xl font-bold'>
           <h1>praveenatom91@gmail.com</h1>
           <h1 className='text-gray-300'>+91 9010810194</h1>
         </div>
@@ -76,7 +72,6 @@ export default function Contact() {
           </a>
         </div>
       </div>
-      {/* </Vortex> */}
     </>
   );
 }
