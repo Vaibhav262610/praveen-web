@@ -1,51 +1,110 @@
-// pages/page.tsx
-import React from 'react';
+// components/page.tsx
+'use client';
+import AdminBlogs from '@/components/AdminBlogs';
+import React, { useState } from 'react';
+
+// Individual Section Components
+const AboutMe: React.FC = () => (
+  <section id='about-me' className='mb-12'>
+    <h3 className='text-3xl font-bold text-yellow-400 mb-4'>About Me</h3>
+    <p className='text-lg text-gray-300'>
+      This section can be used to provide personal details about the admin. You
+      can add a short bio, contact information, or anything else you'd like to
+      showcase!
+    </p>
+  </section>
+);
+
+const Images: React.FC = () => (
+  <section id='images'>
+    <h3 className='text-3xl font-bold text-yellow-400 mb-4'>Images</h3>
+    <p className='text-lg text-gray-300'>
+      Here you can upload and view images, perhaps for your blog posts, profile
+      pictures, or other media.
+    </p>
+  </section>
+);
 
 const page: React.FC = () => {
+  const [activeSection, setActiveSection] = useState<string>('about-me');
+
+  // Function to change active section
+  const handleSectionChange = (section: string) => {
+    setActiveSection(section);
+  };
+
+  // Function to get the content based on active section
+  const renderContent = () => {
+    switch (activeSection) {
+      case 'about-me':
+        return <AboutMe />;
+      case 'blogs':
+        return <AdminBlogs />;
+      case 'images':
+        return <Images />;
+      default:
+        return <AboutMe />;
+    }
+  };
+
   return (
-    <div className='flex flex-col items-center justify-center min-h-screen bg-gray-100 px-4 py-12'>
-      <div className='w-full max-w-4xl bg-white rounded-2xl shadow-lg p-8'>
-        <h1 className='text-4xl font-bold text-gray-800 text-center mb-6'>
-          About Me
-        </h1>
-        <p className='text-lg text-gray-600 leading-relaxed mb-6'>
-          Hello! I’m [Your Name], a passionate developer who loves creating
-          intuitive and beautiful web experiences. With a strong foundation in
-          web technologies, I specialize in building scalable and efficient
-          applications.
-        </p>
-        <p className='text-lg text-gray-600 leading-relaxed mb-6'>
-          I believe in writing clean, maintainable code and continuously
-          learning to stay ahead in this ever-evolving tech landscape. My
-          journey has been fueled by curiosity, dedication, and the drive to
-          solve complex problems.
-        </p>
-        <div className='flex flex-wrap gap-4 mt-6'>
-          <div className='flex-1 bg-gray-50 p-4 rounded-lg shadow-md'>
-            <h2 className='text-xl font-semibold text-gray-700 mb-2'>
-              Experience
-            </h2>
-            <p className='text-gray-600'>
-              Over [X years] of experience in full-stack development, working
-              with technologies like React, Node.js, and TypeScript.
-            </p>
-          </div>
-          <div className='flex-1 bg-gray-50 p-4 rounded-lg shadow-md'>
-            <h2 className='text-xl font-semibold text-gray-700 mb-2'>Skills</h2>
-            <p className='text-gray-600'>
-              Proficient in JavaScript, TypeScript, React, Next.js, Tailwind
-              CSS, and more.
-            </p>
-          </div>
-          <div className='flex-1 bg-gray-50 p-4 rounded-lg shadow-md'>
-            <h2 className='text-xl font-semibold text-gray-700 mb-2'>
-              Hobbies
-            </h2>
-            <p className='text-gray-600'>
-              When I’m not coding, I enjoy reading, exploring new technologies,
-              and gaming.
-            </p>
-          </div>
+    <div className='flex min-h-screen bg-gray-900'>
+      {/* Sidebar */}
+      <div className='w-64 bg-gray-800 text-white shadow-lg p-6'>
+        <h2 className='text-2xl mt-24 font-bold mb-8 text-gray-200'>
+          Admin Dashboard
+        </h2>
+        <nav>
+          <ul>
+            <li
+              className={`mb-6 rounded-md p-2 ${
+                activeSection === 'about-me'
+                  ? 'bg-gray-700'
+                  : 'hover:bg-gray-700'
+              }`}
+            >
+              <a
+                href='#about-me'
+                className='text-lg font-semibold hover:text-yellow-400 transition'
+                onClick={() => handleSectionChange('about-me')}
+              >
+                About Me
+              </a>
+            </li>
+            <li
+              className={`mb-6 rounded-md p-2 ${
+                activeSection === 'blogs' ? 'bg-gray-700' : 'hover:bg-gray-700'
+              }`}
+            >
+              <a
+                href='#blogs'
+                className='text-lg font-semibold hover:text-yellow-400 transition'
+                onClick={() => handleSectionChange('blogs')}
+              >
+                Blogs
+              </a>
+            </li>
+            <li
+              className={`mb-6 rounded-md p-2 ${
+                activeSection === 'images' ? 'bg-gray-700' : 'hover:bg-gray-700'
+              }`}
+            >
+              <a
+                href='#images'
+                className='text-lg font-semibold hover:text-yellow-400 transition'
+                onClick={() => handleSectionChange('images')}
+              >
+                Images
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      {/* Main Content */}
+      <div className='flex-1 p-8 mt-16'>
+        <div className='bg-gray-800 rounded-lg shadow-lg p-6 mb-8'>
+          {renderContent()}
         </div>
       </div>
     </div>

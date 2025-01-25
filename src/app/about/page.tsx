@@ -1,6 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { FC, useEffect } from 'react';
+// import aos from 'aos';
 import aos from 'aos';
 import 'aos/dist/aos.css';
 import Squares from '@/utils/Squares2';

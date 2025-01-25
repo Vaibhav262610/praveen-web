@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  font-family: "Geologica", serif;
+  font-family: "Raleway", serif;
   background-color: rgb(17, 17, 24);
   overflow-x: hidden;
   /* cursor: none; */

@@ -12,10 +12,11 @@ const Header = () => {
                     {/* Uncomment this if you want to display the image */}
                     {/* <Image className='absolute pb-32 ml-32' src="https://png.pngtree.com/png-vector/20241009/ourmid/pngtree-3d-camera-icon-on-a-transparent-background-png-image_14037680.png" width={200} height={200} alt='camera' /> */}
                     <div className='flex flex-col flex-wrap md:flex-row md:gap-5 items-start md:items-center'>
-                        <h1 className='text-5xl sm:text-6xl md:text-[8rem] leading-1 sm:leading-tight md:leading-[7rem] text-white font-black tracking-tight md:-tracking-widest'>
+                        <h1 className='text-5xl sm:text-6xl md:text-[8rem] leading-1 sm:leading-tight md:leading-[7rem] text-white font-black tracking-tight md:-tracking-wider'>
                             PRAVEEN
                         </h1>
-                        <h1 className='text-5xl sm:text-6xl md:text-[8rem] leading-1 sm:leading-tight md:leading-[7rem] text-white font-black tracking-tight md:-tracking-widest'>
+
+                        <h1 className='text-5xl sm:text-6xl md:text-[8rem] leading-1 sm:leading-tight md:leading-[7rem] text-white font-black tracking-tight md:-tracking-wider'>
                             PASUPULETI
                         </h1>
                     </div>
