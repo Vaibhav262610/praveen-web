@@ -6,7 +6,8 @@ import Squares from '@/utils/Squares';
 const AboutMe: React.FC = () => {
   return (
     <>
-      <div className='absolute z-10 border-b-2 border-white opacity-10'>
+      {/* Background Squares */}
+      <div className='absolute z-10 border-b-2 border-white opacity-10 w-full overflow-hidden'>
         <Squares
           speed={0.5}
           squareSize={40}
@@ -15,28 +16,19 @@ const AboutMe: React.FC = () => {
           hoverFillColor='#222'
         />
       </div>
-      <div className='flex justify-end overflow-hidden'>
-        <div className='text z-50 absolute gap-20 flex animate-aboutMeScroll overflow-hidden text-[10vw] font-bold uppercase text-transparent whitespace-nowrap'>
+
+      {/* Scrolling Text */}
+      <div className='flex mt-24 md:mt-0 justify-end overflow-hidden'>
+        <div className='text z-50 absolute gap-20 flex  md:animate-aboutMeScroll md:mt-24 text-7xl md:text-[10rem] font-bold uppercase whitespace-nowrap'>
           <h1>ABOUT ME</h1>
           <h1>ABOUT ME</h1>
           <h1>ABOUT ME</h1>
         </div>
-        <style jsx>{`
-          @keyframes aboutMeScroll {
-            0% {
-              transform: translateX(100%);
-            }
-            100% {
-              transform: translateX(-40%);
-            }
-          }
-
-          .animate-aboutMeScroll {
-            animation: aboutMeScroll 25s linear infinite;
-          }
-        `}</style>
       </div>
-      <div className='flex flex-col lg:flex-row w-full justify-evenly items-center h-auto lg:h-[100vh] mt-16 lg:mt-40 px-6 lg:px-16'>
+
+      {/* About Me Content */}
+      <div className='flex flex-col lg:flex-row w-full justify-evenly items-center h-auto lg:h-[100vh] mt-44 lg:mt-40 px-6 lg:px-16 overflow-hidden'>
+        {/* Text Section */}
         <div className='lg:w-[40%] flex flex-col text-center lg:text-left'>
           <div>
             <h1 className='text-gray-300 leading-relaxed text-lg sm:text-xl lg:text-2xl'>
@@ -59,6 +51,8 @@ const AboutMe: React.FC = () => {
             </button>
           </div>
         </div>
+
+        {/* Image Section */}
         <div className='mt-12 lg:mt-0'>
           <Image
             src='/aboutMe-img.png'
@@ -69,6 +63,26 @@ const AboutMe: React.FC = () => {
           />
         </div>
       </div>
+
+      {/* Animation Styles */}
+      <style jsx>{`
+        @keyframes aboutMeScroll {
+          0% {
+            transform: translateX(100%);
+          }
+          100% {
+            transform: translateX(-100%);
+          }
+        }
+
+        .animate-aboutMeScroll {
+          animation: aboutMeScroll 25s linear infinite;
+        }
+
+        body {
+          overflow-x: hidden;
+        }
+      `}</style>
     </>
   );
 };

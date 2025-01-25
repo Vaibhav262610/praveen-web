@@ -72,7 +72,7 @@ const Slide: React.FC<SlideProps> = ({
     <div className='[perspective:1200px] [transform-style:preserve-3d]'>
       <li
         ref={slideRef}
-        className={`flex flex-1 flex-col items-center justify-center relative text-center text-white opacity-100 transition-all duration-300 ease-in-out w-[50vmin] h-[50vmin] mx-[3vmin] z-10 ${
+        className={`flex flex-1 flex-col items-center justify-center relative text-center text-white opacity-100 transition-all duration-300 ease-in-out md:w-[50vmin] md:h-[50vmin] w-[60vmin] h-[60vmin]  mx-[3vmin] z-10 ${
           current !== index ? 'blur-sm' : ''
         }`}
         onClick={() => handleSlideClick(index)}
@@ -144,7 +144,7 @@ const CarouselControl: React.FC<CarouselControlProps> = ({
 }) => {
   return (
     <button
-      className={`w-12 h-12 mt-4  flex items-center mx-2 justify-center bg-neutral-200 dark:bg-neutral-800 border-3 border-transparent rounded-full focus:border-[#6D64F7] focus:outline-none hover:-translate-y-0.5 active:translate-y-0.5 transition duration-200 ${
+      className={`w-12 h-12 mt-24 md:mt-4  flex items-center mx-2 justify-center bg-neutral-200 dark:bg-neutral-800 border-3 border-transparent rounded-full focus:border-[#6D64F7] focus:outline-none hover:-translate-y-0.5 active:translate-y-0.5 transition duration-200 ${
         type === 'previous' ? 'rotate-180' : ''
       }`}
       title={title}

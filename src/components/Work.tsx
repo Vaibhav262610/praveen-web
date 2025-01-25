@@ -29,8 +29,8 @@ export default function Work() {
   return (
     <div className='h-[120vh] w-full mt-[2.3rem] flex flex-col'>
       {/* Animated "WORKS" Heading */}
-      <div className='relative flex justify-center items-center h-96 overflow-hidden'>
-        <div className='absolute text flex gap-20 animate-aboutMeScroll text-[12vw] font-bold uppercase text-transparent whitespace-nowrap'>
+      <div className='flex mt-24 md:mt-0 justify-end overflow-hidden'>
+        <div className='text z-50 absolute gap-20 flex  md:animate-aboutMeScroll md:mt-24 text-8xl md:text-[10rem] font-bold uppercase whitespace-nowrap'>
           <h1 className='tracking-widest'>WORKS</h1>
           <h1 className='tracking-widest'>WORKS</h1>
         </div>
@@ -55,7 +55,7 @@ export default function Work() {
         <Carousel slides={slideData} />
       </div>
       <div className='w-full py-12 flex items-center justify-center'>
-        <button className='text-yellow-400 hover:text-white text-xl rounded border-2 hover:bg-yellow-400 duration-200 border-yellow-400 py-2 px-8 mt-12'>
+        <button className='text-yellow-400 hover:text-white text-lg md:text-xl rounded border-2 hover:bg-yellow-400 duration-200 border-yellow-400 md:py-2 md:px-8 py-1 px-4 mt-12'>
           MORE 👉
         </button>
       </div>

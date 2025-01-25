@@ -9,6 +9,11 @@ body {
   /* cursor: none; */
 }
 
+html {
+  overflow-x: hidden;
+
+}
+
 .name {
   font-size: 10rem;
   color: white;
@@ -70,9 +75,10 @@ body {
   background: -webkit-linear-gradient(-86deg, #ffa4ff 5%, #cdec7a 53%, #c8ff00 91%);
   background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-stroke: 6px transparent;
+  -webkit-text-stroke: 4px transparent;
   color: rgb(17, 17, 24);
   user-select: none;
+  /* background-color: #c8ff00; */
 
 }
 
@@ -80,7 +86,7 @@ body {
   background: -webkit-linear-gradient(-86deg, #ffa4ff 5%, #cdec7a 53%, #c8ff00 91%);
   background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-stroke: 6px transparent;
+  -webkit-text-stroke: 4px transparent;
   color: rgb(17, 17, 24);
   user-select: none;
 
