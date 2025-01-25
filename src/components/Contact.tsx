@@ -17,7 +17,7 @@ export default function Contact() {
         />
       </div>
       <div className='flex mt-24 md:mt-0 justify-end overflow-hidden'>
-        <div className='text z-50 absolute gap-20 flex  md:animate-aboutMeScroll md:mt-24 text-[4.7rem] md:text-[10rem] font-bold uppercase whitespace-nowrap'>
+        <div className='text z-50 absolute gap-20 flex  sm:animate-none animate-aboutMeScroll  md:mt-24 text-[4.7rem] md:text-[10rem] font-bold uppercase whitespace-nowrap'>
           <h1 className='tracking-widest'>CONTACT</h1>
           <h1 className='tracking-widest'>CONTACT</h1>
         </div>

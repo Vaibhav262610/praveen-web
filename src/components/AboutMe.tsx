@@ -19,7 +19,7 @@ const AboutMe: React.FC = () => {
 
       {/* Scrolling Text */}
       <div className='flex mt-24 md:mt-0 justify-end overflow-hidden'>
-        <div className='text z-50 absolute gap-20 flex  md:animate-aboutMeScroll md:mt-24 text-7xl md:text-[10rem] font-bold uppercase whitespace-nowrap'>
+        <div className='text z-50 absolute gap-20 flex  sm:animate-none animate-aboutMeScroll  md:mt-24 text-7xl md:text-[10rem] font-bold uppercase whitespace-nowrap'>
           <h1>ABOUT ME</h1>
           <h1>ABOUT ME</h1>
           <h1>ABOUT ME</h1>
