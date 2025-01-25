@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Squares from '@/utils/Squares';
+import Link from 'next/link';
 
 const AboutMe: React.FC = () => {
   return (
@@ -19,7 +20,7 @@ const AboutMe: React.FC = () => {
 
       {/* Scrolling Text */}
       <div className='flex mt-24 md:mt-0 justify-end overflow-hidden'>
-        <div className='text z-50 absolute gap-20 flex  sm:animate-none animate-aboutMeScroll  md:mt-24 text-7xl md:text-[10rem] font-bold uppercase whitespace-nowrap'>
+        <div className='text z-50 absolute gap-20 flex animate-aboutMeScroll  md:mt-24 text-7xl md:text-[10rem] font-bold uppercase whitespace-nowrap'>
           <h1>ABOUT ME</h1>
           <h1>ABOUT ME</h1>
           <h1>ABOUT ME</h1>
@@ -45,10 +46,12 @@ const AboutMe: React.FC = () => {
               Thyview.
             </h1>
           </div>
-          <div>
-            <button className='text-green-400 hover:text-white text-lg lg:text-xl rounded border-2 hover:bg-green-400 duration-200 border-green-400 py-2 px-6 sm:px-8 mt-8'>
-              MORE 👉
-            </button>
+          <div className='z-50'>
+            <Link href='/about'>
+              <button className='text-green-400 hover:text-white text-lg lg:text-xl rounded border-2 hover:bg-green-400 duration-200 border-green-400 py-2 px-6 sm:px-8 mt-8'>
+                MORE 👉
+              </button>
+            </Link>
           </div>
         </div>
 

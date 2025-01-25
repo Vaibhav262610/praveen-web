@@ -49,18 +49,26 @@ const Navbar = () => {
 
         {/* Navigation Buttons */}
         <div className='hidden md:flex gap-4'>
-          <button className='text-white font-bold py-1 rounded-sm hover:bg-gray-300/30 px-3 duration-200'>
-            HOME
-          </button>
-          <button className='text-white font-bold py-1 rounded-sm hover:bg-gray-300/30 px-3 duration-200'>
-            SCULPTUREZ
-          </button>
-          <button className='text-white font-bold py-1 rounded-sm hover:bg-gray-300/30 px-3 duration-200'>
-            SANCHARIZ
-          </button>
-          <button className='text-white font-bold py-1 rounded-sm hover:bg-gray-300/30 px-3 duration-200'>
-            TECHNIQZ
-          </button>
+          <Link href='/'>
+            <button className='text-white font-bold py-1 rounded-sm hover:bg-gray-300/30 px-3 duration-200'>
+              HOME
+            </button>
+          </Link>
+          <Link href='/'>
+            <button className='text-white font-bold py-1 rounded-sm hover:bg-gray-300/30 px-3 duration-200'>
+              SCULPTUREZ
+            </button>
+          </Link>
+          <Link href='/'>
+            <button className='text-white font-bold py-1 rounded-sm hover:bg-gray-300/30 px-3 duration-200'>
+              SANCHARIZ
+            </button>
+          </Link>
+          <Link href='/'>
+            <button className='text-white font-bold py-1 rounded-sm hover:bg-gray-300/30 px-3 duration-200'>
+              TECHNIQZ
+            </button>
+          </Link>
         </div>
 
         {/* Social Icons */}

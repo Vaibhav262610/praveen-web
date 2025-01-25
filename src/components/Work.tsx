@@ -27,10 +27,10 @@ export default function Work() {
   ];
 
   return (
-    <div className='h-[120vh] w-full mt-[2.3rem] flex flex-col'>
+    <div className='h-[120vh]  w-full mt-[2.3rem] flex flex-col'>
       {/* Animated "WORKS" Heading */}
-      <div className='flex mt-24 md:mt-0 justify-end overflow-hidden'>
-        <div className='text z-50 absolute gap-20 flex  sm:animate-none animate-aboutMeScroll  md:mt-24 text-8xl md:text-[10rem] font-bold uppercase whitespace-nowrap'>
+      <div className='flex mt-12 md:mt-0 justify-end overflow-hidden'>
+        <div className='text z-50 absolute gap-20 flex  sm:animate-none animate-aboutMeScroll  md:mt-12 text-8xl md:text-[10rem] font-bold uppercase whitespace-nowrap'>
           <h1 className='tracking-widest'>WORKS</h1>
           <h1 className='tracking-widest'>WORKS</h1>
         </div>
@@ -51,11 +51,11 @@ export default function Work() {
       </div>
 
       {/* Carousel Section */}
-      <div className='h-screen flex items-center justify-center'>
+      <div className='h-screen mt-24 flex items-center justify-center'>
         <Carousel slides={slideData} />
       </div>
       <div className='w-full py-12 flex items-center justify-center'>
-        <button className='text-yellow-400 hover:text-white text-lg md:text-xl rounded border-2 hover:bg-yellow-400 duration-200 border-yellow-400 md:py-2 md:px-8 py-1 px-4 mt-12'>
+        <button className='text-yellow-400 hover:text-white text-lg md:text-xl rounded border-2 hover:bg-yellow-400 duration-200 border-yellow-400 md:py-2 md:px-8 py-1 px-4 '>
           MORE 👉
         </button>
       </div>
