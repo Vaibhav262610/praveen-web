@@ -1,6 +1,7 @@
 // components/page.tsx
 'use client';
 import AdminBlogs from '@/components/AdminBlogs';
+import AdminImage from '@/components/AdminImage';
 import React, { useState } from 'react';
 
 // Individual Section Components
@@ -41,7 +42,7 @@ const page: React.FC = () => {
       case 'blogs':
         return <AdminBlogs />;
       case 'images':
-        return <Images />;
+        return <AdminImage />;
       default:
         return <AboutMe />;
     }

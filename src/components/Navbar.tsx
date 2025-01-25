@@ -101,7 +101,7 @@ const Navbar = () => {
         </div>
 
         {/* Social Icons */}
-        <div className='hidden md:flex items-center gap-2'>
+        <div className='hidden md:flex items-center gap-4'>
           {isPlaying ? (
             <button
               onClick={togglePlayPause} // Toggle play/pause when clicked

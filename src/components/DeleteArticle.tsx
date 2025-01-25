@@ -1,8 +1,8 @@
 import React from 'react';
-// import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 const DeleteArticle = ({ id }) => {
-  //   const router = useRouter();
+  const router = useRouter();
   const deleteArticle = async () => {
     const confirmed = confirm('Are you sure ?');
 
@@ -10,6 +10,7 @@ const DeleteArticle = ({ id }) => {
       await fetch(`http://localhost:3000/api/articles?id=${id}`, {
         method: 'DELETE',
       });
+      router.push('/admin');
       //   window.location.reload();
     }
   };

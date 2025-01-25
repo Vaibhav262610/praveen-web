@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import DeleteArticle from './DeleteArticle';
+import { useRouter } from 'next/navigation';
 
 const getArticles = async () => {
   try {
@@ -26,6 +27,8 @@ const AdminBlogs: React.FC = () => {
   >([]);
   const [topic, setTopic] = useState('');
   const [article, setArticle] = useState('');
+
+  const router = useRouter();
 
   useEffect(() => {
     const fetchArticles = async () => {
@@ -58,15 +61,15 @@ const AdminBlogs: React.FC = () => {
         return;
       }
 
-      // Fetch the newly posted article response and directly update the state
       const newArticle = await res.json();
+      console.log('New Article:', newArticle); // Debugging purpose
       setArticles((prevArticles) => [...prevArticles, newArticle]);
-
-      // Reset the input fields
       setTopic('');
       setArticle('');
+      router.push('/admin');
     } catch (error) {
       console.log('Error:', error);
+      alert('Something went wrong!');
     }
   };
 
@@ -105,7 +108,7 @@ const AdminBlogs: React.FC = () => {
             <div key={index} className='bg-gray-600 p-6 rounded-lg'>
               <h2 className='text-3xl font-semibold mb-4'>{item.topic}</h2>
               <p className='text-lg text-gray-300'>{item.article}</p>
-              <div className='flex space-x-4 '>
+              <div className='flex mt-5 space-x-4 '>
                 <Link href={`/edit/${item._id}`}>
                   <button className='bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition'>
                     Edit
