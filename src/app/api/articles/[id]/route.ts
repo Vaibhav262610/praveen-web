@@ -1,6 +1,7 @@
 import ConnectDb from '@/libs/mongodb';
 import Article from '@/models/articles.model';
 import { NextResponse } from 'next/server';
+import { Connection } from 'mongoose'; // Import mongoose for types
 
 interface UpdateArticleBody {
   newTopic: string;
@@ -11,16 +12,16 @@ interface Params {
   id: string;
 }
 
-let cachedDb: unknown = null; // Cache the database connection for serverless environment
+let cachedDb: Connection | null = null; // Type the cachedDb as mongoose.Connection
 
 // Utility function to handle MongoDB connection
 async function connectToDatabase() {
   if (cachedDb) {
-    return cachedDb;
+    return cachedDb; // Reuse the existing connection
   }
 
   try {
-    cachedDb = await ConnectDb(); // Reuse existing connection
+    cachedDb = await ConnectDb(); // ConnectDb should return a Connection type
     return cachedDb;
   } catch (error) {
     console.error('Error connecting to MongoDB:', error);
@@ -30,10 +31,10 @@ async function connectToDatabase() {
 
 export async function PUT(
   req: Request,
-  context: { params: Params } // Adjusted to Vercel's parameter structure
+  { params }: { params: Params }
 ): Promise<NextResponse> {
   try {
-    const { id } = context.params;
+    const { id } = params;
 
     // Validate the `id` parameter
     if (!id) {
@@ -92,10 +93,10 @@ export async function PUT(
 
 export async function GET(
   req: Request,
-  context: { params: Params } // Adjusted to Vercel's parameter structure
+  { params }: { params: Params }
 ): Promise<NextResponse> {
   try {
-    const { id } = context.params;
+    const { id } = params;
 
     // Validate the `id` parameter
     if (!id) {
