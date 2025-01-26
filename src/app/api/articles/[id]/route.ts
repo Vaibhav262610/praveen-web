@@ -11,7 +11,7 @@ interface Params {
   id: string;
 }
 
-let cachedDb: unknown = null; // Cache the database connection for serverless environment
+let cachedDb: any = null; // Cache the database connection for serverless environment
 
 // Utility function to handle MongoDB connection
 async function connectToDatabase() {
@@ -30,10 +30,10 @@ async function connectToDatabase() {
 
 export async function PUT(
   req: Request,
-  { params }: { params: Params }
+  context: { params: Params } // Adjusted to Vercel's parameter structure
 ): Promise<NextResponse> {
   try {
-    const { id } = params;
+    const { id } = context.params;
 
     // Validate the `id` parameter
     if (!id) {
@@ -92,10 +92,10 @@ export async function PUT(
 
 export async function GET(
   req: Request,
-  { params }: { params: Params }
+  context: { params: Params } // Adjusted to Vercel's parameter structure
 ): Promise<NextResponse> {
   try {
-    const { id } = params;
+    const { id } = context.params;
 
     // Validate the `id` parameter
     if (!id) {
