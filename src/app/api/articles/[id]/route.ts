@@ -11,6 +11,23 @@ interface Params {
   id: string;
 }
 
+let cachedDb: unknown = null; // Cache the database connection for serverless environment
+
+// Utility function to handle MongoDB connection
+async function connectToDatabase() {
+  if (cachedDb) {
+    return cachedDb;
+  }
+
+  try {
+    cachedDb = await ConnectDb(); // Reuse existing connection
+    return cachedDb;
+  } catch (error) {
+    console.error('Error connecting to MongoDB:', error);
+    throw new Error('Failed to connect to the database');
+  }
+}
+
 export async function PUT(
   req: Request,
   { params }: { params: Params }
@@ -37,7 +54,7 @@ export async function PUT(
     }
 
     // Connect to the database
-    await ConnectDb();
+    await connectToDatabase();
 
     // Update the article in the database
     const updatedArticle = await Article.findByIdAndUpdate(
@@ -89,7 +106,7 @@ export async function GET(
     }
 
     // Connect to the database
-    await ConnectDb();
+    await connectToDatabase();
 
     // Find the article by ID
     const article = await Article.findById(id);
