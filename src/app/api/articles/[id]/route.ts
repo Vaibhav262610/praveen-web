@@ -11,7 +11,7 @@ interface Params {
   id: string;
 }
 
-let cachedDb: any = null; // Cache the database connection for serverless environment
+let cachedDb: unknown = null; // Cache the database connection for serverless environment
 
 // Utility function to handle MongoDB connection
 async function connectToDatabase() {
