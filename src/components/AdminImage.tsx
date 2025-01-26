@@ -1,6 +1,14 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 import React, { useState } from 'react';
 import { CldUploadWidget, CldImage } from 'next-cloudinary';
+
+// Define your callback function to handle successful uploads
+const handleUploadSuccess = (result: any) => {
+  console.log('Upload Success:', result?.info?.public_id);
+  // You can set the public ID or handle the result as needed
+  return result?.info?.public_id || null;
+};
 
 const AdminImage: React.FC = () => {
   const [publicId, setPublicId] = useState<string | null>(null);
@@ -10,10 +18,8 @@ const AdminImage: React.FC = () => {
       {/* Cloudinary upload widget */}
       <CldUploadWidget
         uploadPreset='praveen-web' // Replace with your upload preset
-        onUploadSuccess={(result) => {
-          // Log the public ID and update the state
-          console.log('Upload Success:', result?.info?.public_id);
-          setPublicId(result?.info?.public_id || null);
+        onSuccess={(result: any) => {
+          setPublicId(handleUploadSuccess(result));
         }}
       >
         {({ open }) => (

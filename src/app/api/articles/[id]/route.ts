@@ -9,10 +9,6 @@ interface UpdateArticleBody {
   newArticle: string;
 }
 
-interface Params {
-  id: string;
-}
-
 let cachedDb: Connection | null = null; // Type the cachedDb as mongoose.Connection
 
 // Utility function to handle MongoDB connection
