@@ -4,14 +4,16 @@ import React, { useEffect, useState } from 'react';
 
 const getArticles = async () => {
   try {
-    const res = await fetch('http://praveen-web.vercel.app/api/articles', {
+    const res = await fetch('https://praveen-web.vercel.app/api/articles', {
       cache: 'no-store',
     });
     if (!res.ok) {
       console.error('FAILED TO FETCH ARTICLES');
       return [];
     }
-    return await res.json();
+    const data = await res.json();
+    console.log('Fetched articles:', data); // Log the response
+    return data;
   } catch (error) {
     console.error('ERROR LOADING ARTICLES', error);
     return [];
@@ -26,7 +28,7 @@ const Page: React.FC = () => {
   useEffect(() => {
     const fetchArticles = async () => {
       const data = await getArticles();
-      setArticles(data.articles || []);
+      setArticles(data.articles || []); // Make sure 'articles' is the right property
     };
 
     fetchArticles();
@@ -43,18 +45,22 @@ const Page: React.FC = () => {
         </p>
       </header>
       <div className='mt-16 md:mt-24 max-w-4xl w-full'>
-        {articles.map((item, index) => (
-          <section key={index} className='w-full'>
-            <article className='bg-gray-800 p-6 rounded-lg shadow-lg mb-8'>
-              <h2 className='text-2xl md:text-3xl font-semibold mb-4'>
-                {item.topic}
-              </h2>
-              <p className='text-base md:text-lg text-gray-300'>
-                {item.article}
-              </p>
-            </article>
-          </section>
-        ))}
+        {articles.length === 0 ? (
+          <p className='text-center text-gray-400'>No articles available</p>
+        ) : (
+          articles.map((item, index) => (
+            <section key={index} className='w-full'>
+              <article className='bg-gray-800 p-6 rounded-lg shadow-lg mb-8'>
+                <h2 className='text-2xl md:text-3xl font-semibold mb-4'>
+                  {item.topic}
+                </h2>
+                <p className='text-base md:text-lg text-gray-300'>
+                  {item.article}
+                </p>
+              </article>
+            </section>
+          ))
+        )}
       </div>
     </div>
   );
