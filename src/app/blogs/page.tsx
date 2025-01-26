@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 
 const getArticles = async () => {
   try {
-    const res = await fetch('http://localhost:3000/api/articles', {
+    const res = await fetch('http://praveen-web.vercel.app/api/articles', {
       cache: 'no-store',
     });
     if (!res.ok) {

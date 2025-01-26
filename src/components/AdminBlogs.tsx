@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 
 const getArticles = async () => {
   try {
-    const res = await fetch('http://localhost:3000/api/articles', {
+    const res = await fetch('https://praveen-web.vercel.app/api/articles', {
       cache: 'no-store',
     });
     if (!res.ok) {
@@ -46,7 +46,7 @@ const AdminBlogs: React.FC = () => {
       return;
     }
     try {
-      const res = await fetch('http://localhost:3000/api/articles', {
+      const res = await fetch('https://praveen-web.vercel.app/api/articles', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
