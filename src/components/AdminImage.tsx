@@ -1,42 +1,43 @@
 'use client';
-import { CldImage, CldUploadWidget } from 'next-cloudinary';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { CldUploadWidget, CldImage } from 'next-cloudinary';
 
-export default function AdminImage() {
-  const [publicId, setPublicId] = useState('');
+const AdminImage: React.FC = () => {
+  const [publicId, setPublicId] = useState<string | null>(null);
 
   return (
-    <div className='flex flex-col items-center space-y-4'>
-      {/* Display the uploaded image */}
-      {publicId && (
-        <CldImage
-          src={publicId}
-          alt='Uploaded Image'
-          width={330}
-          height={180}
-          className='rounded-lg shadow-md'
-        />
-      )}
-
-      {/* Upload button */}
+    <div>
+      {/* Cloudinary upload widget */}
       <CldUploadWidget
-        uploadPreset='praveen' // Replace with your upload preset
-        onUpload={(info) => {
-          console.log(info); // Debug upload details
-          if (info.event === 'success') {
-            setPublicId(info.info.public_id);
-          }
+        uploadPreset='praveen-web' // Replace with your upload preset
+        onUploadSuccess={(result) => {
+          // Log the public ID and update the state
+          console.log('Upload Success:', result?.info?.public_id);
+          setPublicId(result?.info?.public_id || null);
         }}
       >
         {({ open }) => (
           <button
-            className='bg-gradient-to-r from-green-400 to-blue-500 hover:from-green-500 hover:to-blue-600 text-white px-6 py-3 rounded-lg shadow-lg transform hover:scale-105 transition duration-300'
             onClick={() => open()}
+            className='bg-blue-500 text-white px-4 py-2 rounded'
           >
             Upload an Image
           </button>
         )}
       </CldUploadWidget>
+
+      {/* Display the uploaded image if publicId is available */}
+      {publicId && (
+        <CldImage
+          width='960'
+          height='600'
+          src={`https://res.cloudinary.com/dfn0yfnmt/image/upload/${publicId}`} // Use the correct Cloudinary URL format
+          sizes='100vw'
+          alt='Uploaded Image'
+        />
+      )}
     </div>
   );
-}
+};
+
+export default AdminImage;

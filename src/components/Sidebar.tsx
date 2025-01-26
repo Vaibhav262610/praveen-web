@@ -7,11 +7,6 @@ const Sidebar: React.FC = () => {
       <h2 className='text-2xl mt-28 font-bold mb-6'>Admin Dashboard</h2>
       <nav>
         <ul>
-          <Link href='#about-me'>
-            <li className='mb-4'>
-              <h1 className='text-lg hover:text-yellow-400'>About Me</h1>
-            </li>
-          </Link>
           <Link href='#blogs'>
             <li className='mb-4'>
               <h1 className='text-lg hover:text-yellow-400'>Blogs</h1>

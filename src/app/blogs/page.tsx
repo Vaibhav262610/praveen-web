@@ -31,22 +31,27 @@ const Page: React.FC = () => {
 
     fetchArticles();
   }, []);
+
   return (
-    <div className='min-h-screen text-white flex flex-col items-center justify-center'>
-      <header className='text-center mt-40 mb-12'>
-        <h1 className='text-7xl md:text-[10rem] font-extrabold text-white'>
+    <div className='min-h-screen text-white flex flex-col items-center justify-center px-4'>
+      <header className='text-center mt-20 mb-12'>
+        <h1 className='text-4xl md:text-6xl lg:text-7xl font-extrabold text-white'>
           TECHNIQ
         </h1>
-        <p className='text-xl italic text-gray-400'>
+        <p className='text-lg md:text-xl italic text-gray-400'>
           Stay updated with the latest travel insights.
         </p>
       </header>
-      <div className='mt-24 max-w-4xl w-full'>
+      <div className='mt-16 md:mt-24 max-w-4xl w-full'>
         {articles.map((item, index) => (
-          <section key={index} className=' max-w-4xl w-full'>
+          <section key={index} className='w-full'>
             <article className='bg-gray-800 p-6 rounded-lg shadow-lg mb-8'>
-              <h2 className='text-3xl font-semibold mb-4'>{item.topic}</h2>
-              <p className='text-lg text-gray-300'>{item.article}</p>
+              <h2 className='text-2xl md:text-3xl font-semibold mb-4'>
+                {item.topic}
+              </h2>
+              <p className='text-base md:text-lg text-gray-300'>
+                {item.article}
+              </p>
             </article>
           </section>
         ))}
