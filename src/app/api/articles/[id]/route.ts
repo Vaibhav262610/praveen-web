@@ -30,10 +30,7 @@ async function connectToDatabase() {
   }
 }
 
-export async function PUT(
-  req: Request,
-  { params }: { params: Params }
-): Promise<NextResponse> {
+export async function PUT(req: Request, { params }: any) {
   try {
     const { id } = params;
 
