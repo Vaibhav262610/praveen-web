@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import ConnectDb from '@/libs/mongodb';
 import Article from '@/models/articles.model';
 import { NextResponse } from 'next/server';
@@ -91,10 +92,7 @@ export async function PUT(
   }
 }
 
-export async function GET(
-  req: Request,
-  { params }: { params: Params }
-): Promise<NextResponse> {
+export async function GET(req: Request, { params }: any) {
   try {
     const { id } = params;
 
